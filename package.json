@@ -1,7 +1,7 @@
 {
-  "name": "noti-noti",
-  "private": true,
-  "version": "0.0.0",
+  "name": "notinoti",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -18,5 +18,22 @@
     "vite": "^5.3.1",
     "vite-plugin-dts": "^3.9.1",
     "vue-tsc": "^2.0.21"
-  }
+  },
+  "description": "Vue notifications",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MayderC/notinoti-vue.git"
+  },
+  "keywords": [
+    "\"nofiticacions",
+    "vue",
+    "vuejs\""
+  ],
+  "author": "MayderC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MayderC/notinoti-vue/issues"
+  },
+  "homepage": "https://github.com/MayderC/notinoti-vue#readme"
 }
