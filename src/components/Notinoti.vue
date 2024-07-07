@@ -1,27 +1,32 @@
 <template>
-  <p v-for="notification in notifications.values()" :key="new Date().getTime">
-    {{ notification.title }} - {{ notification.msg }}
-  </p>
+  <div v-if="notification" class="noti">
+    <div class="noti__container">
+      <div class="noti__content">
+        <div class="noti__title">{{ props.notification.title }}</div>
+        <div class="noti__msg">{{ props.notification.msg }}</div>
+      </div>
+    </div>
+  </div>
 </template>
 
 
 <script setup lang="ts">
-import { onMounted } from 'vue';
-import { useNotification } from '../store/store.notification';
+import { NotinotiProps } from '../interfaces/notinoti.interface';
+
+const props = defineProps(
+  {
+    notification: {
+      type: Object as () => NotinotiProps,
+      required: true
+    },
+  }
+);
 
 
 
-const {addNotification, notifications} = useNotification()
 
 
-onMounted(() => {
-  addNotification({
-    title: 'Hello',
-    msg: 'Hello from App.vue',
-    type: 'success',
-    timeout: 2000
-  })
-})
+
 
 
 </script>

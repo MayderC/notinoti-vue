@@ -22,29 +22,40 @@ class NotiSingleton {
 
 
   
-const removeNotification = (hash: string)=> {
+const removeNoti = (hash: string)=> {
   const instance = NotiSingleton.getInstance();
   instance.notifications.delete(hash);
 }
 
 
-export const addNotification =(notification: NotinotiProps) =>{
-
-  const hash = Math.random() + Date.now().toString();
+const addNotification =(notification: NotinotiProps) =>{
 
   const instance = NotiSingleton.getInstance();
-  instance.notifications.set(hash, notification);
-  if (notification.timeout) {
-    setTimeout(() => {
-      removeNotification(hash);
-    }, notification.timeout);
-  }
-}
+  let hash = Math.random() + Date.now().toString();
 
+  while (instance.notifications.has(hash)) {
+    hash = Math.random() + Date.now().toString();
+  }
+
+  
+  notification.id = hash;
+  instance.notifications.set(hash, notification);
+  console.log(instance.notifications);
+
+  setTimeout(() => {
+    removeNoti(hash);
+  }, notification.timeout || 2000);
+
+}
 interface useNotification {
   notifications: Reactive<Map<string, NotinotiProps>>;
   addNotification: (notification: NotinotiProps) => void
 }
+
+
+/*
+  @returns {useNotification} - An object containing the notifications and the addNotification function
+*/
 
 export const useNotification = () : useNotification => {
   const instance = NotiSingleton.getInstance();

@@ -1,5 +1,6 @@
 
 export interface NotinotiProps {
+  id? : string;
   msg: string;
   showTitle?: boolean;
   title?: string;

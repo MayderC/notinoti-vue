@@ -1,9 +1,8 @@
 <template>
-  <Notinoti/>
+  <NotiProvider/>
 </template>
 <script setup lang="ts">
-
-import {Notinoti} from './index'
+import NotiProvider from './components/NotiProvider.vue';
 
 
 
