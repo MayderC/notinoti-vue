@@ -10,6 +10,12 @@ Notinoti es un sistema de notificaciones simple para tu aplicación vuejs
 - [Usage](#usage)
 - [slots](#slots)
 
+## Importants requirements
+
+ - Vue 3
+ - Vite
+ - Tailwindcss
+
 ## Installation
 
 ##
@@ -31,6 +37,47 @@ Notinoti es un sistema de notificaciones simple para tu aplicación vuejs
 </script>
 ```
 
+- You can customize the NotiProvider' component by passing props to the `NotiProvider` component
+
+
+
+<table>
+
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Default</th>
+    <th>Description</th>
+  </tr>
+
+  <tr>
+    <td>container-padding</td>
+    <td>number</td>
+    <td>100</td>
+    <td>padding of the container</td>
+  </tr>
+
+  // class object for the notification container, title, msg
+  <tr>
+    <td>classProp</td>
+    <td>Object</td>
+    <td>example <a id='propdecs' href='#classprop'> below </a></td>
+    <td>class for the notifications</td>
+</table>
+
+- <a id='classprop' href='#propdecs' >classProp example</a>
+
+```javascript
+
+const classProp = {
+  container: 'container-class',
+  title: 'title-class',
+  msg: 'msg-class'
+}
+
+```
+
+
 
 2. Use the `addNotification` method to add a notification in every component you want
 
@@ -48,15 +95,20 @@ addNotification({
 ```
 3. method addNotification() options
 
-```javascript
+```typescript
+
+type NotiType = 'success' | 'info' | 'warning' | 'error' | 'default';
+type NotiPosition = 'topRight'| 'topCenter' | 'topLeft' | 'bottomRight' | 'bottomCenter' | 'bottomLeft' | 'centerCenter' | 'centerLeft' | 'centerRight';
+
+
 export interface NotinotiProps {
   msg: string;
   showTitle?: boolean;
   title?: string;
   icon?: string;
   timeout?: number; // duration in ms
-  position?: string;
-  type?: string;
+  position?: NotiPosition;
+  type?: NotiType;
   resetStyle?: boolean;
   closeOnClick?: boolean;
   closeOnHover?: boolean;

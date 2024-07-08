@@ -27,6 +27,10 @@ const removeNoti = (hash: string)=> {
   instance.notifications.delete(hash);
 }
 
+/*
+  @param {NotinotiProps} - The notification object to add
+  @returns {void}
+*/
 
 const addNotification =(notification: NotinotiProps) =>{
 
