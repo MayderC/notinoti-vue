@@ -1,20 +1,20 @@
 <template>
   <div 
-    class="provider" 
+    class="data-provider_style_provider_" 
     v-for="notification in notifications.values()" 
     :key="notification.id"
     :style="{padding: `${props.containerPadding}px`}"
   >
-    <div class="provider__wrapper">
+    <div class="data-provider__wrapper_style_wrapper">
       <Notinoti :notification="notification"/>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import '../style.css'
 import  Notinoti  from '../components/Notinoti.vue';
 import { useNotification } from '../index';
-
 const { notifications } = useNotification();
 
 const props = defineProps(
@@ -31,9 +31,9 @@ const props = defineProps(
 </script>
 
 
-<style scoped>
+<style>
 
-.provider {
+.data-provider_style_provider_{
   position: absolute;
   padding: 100px;
   top: 0;
@@ -43,7 +43,7 @@ const props = defineProps(
   z-index:-9999
 }
 
-.provider__wrapper {
+.data-provider__wrapper_style_wrapper {
   position: relative;
   height: 100%;
   width: 100%;

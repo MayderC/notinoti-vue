@@ -1,3 +1,4 @@
+
 declare const _default: import('vue').DefineComponent<{
     containerPadding: {
         type: NumberConstructor;

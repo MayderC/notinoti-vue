@@ -13,8 +13,8 @@
 
 
 <script setup lang="ts">
+import {CLASS} from '../cls';
 import {GetClases, NotinotiProps } from '../interfaces/notinoti.interface';
-import CLASS from '../assets/data.json';
 import { ComputedRef, computed } from 'vue';
 
 
@@ -70,10 +70,71 @@ const getClases: ComputedRef<GetClases> = computed(() => {
 
 })
 
+
+
+
 </script>
 
-<style scoped>
-@import url('./notinoti.css');
+<style >
+
+.topRight{
+  top: 0;
+  right: 0;
+}
+
+.topCenter {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.topLeft {
+  top: 0;
+  left: 0;
+}
+
+.bottomRight {
+  bottom: 0;
+  right: 0;
+}
+
+.bottomCenter {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bottomLeft {
+  bottom: 0;
+  left: 0;
+}
+
+.centerCenter {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centerLeft {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.centerRight {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+
+.noti{
+  position: absolute;
+  z-index: 9999;
+}
+
+
+
 
 
 </style>

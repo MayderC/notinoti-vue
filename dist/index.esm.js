@@ -1,26 +1,26 @@
-import { defineComponent as m, computed as v, openBlock as d, createElementBlock as g, normalizeClass as l, createElementVNode as c, toDisplayString as u, createCommentVNode as _, Fragment as x, renderList as w, unref as h, normalizeStyle as y, createVNode as N, reactive as f } from "vue";
-const P = {
-  container: "bg-green-100 border-l-4 border-green-500 text-green-700",
-  title: "text-green-800",
-  msg: "text-green-700"
-}, I = {
-  container: "bg-red-100 border-l-4 border-red-500 text-red-700",
-  title: "text-red-800",
-  msg: "text-red-700"
-}, $ = {
-  container: "bg-orange-100 border-l-4 border-orange-500 text-orange-700",
-  title: "text-orange-800",
-  msg: "text-orange-700"
-}, k = {
-  container: "bg-blue-100 border-l-4 border-blue-500 text-blue-700",
-  title: "text-blue-800",
-  msg: "text-blue-700"
-}, o = {
-  success: P,
-  error: I,
-  warning: $,
-  info: k
-}, C = { class: "noti__container" }, q = /* @__PURE__ */ m({
+import { defineComponent as f, computed as b, openBlock as d, createElementBlock as g, normalizeClass as c, createElementVNode as s, toDisplayString as u, createCommentVNode as v, Fragment as _, renderList as x, unref as w, normalizeStyle as h, createVNode as y, reactive as m } from "vue";
+const e = {
+  success: {
+    container: "bg-green-100 border-l-4 border-green-500 text-green-700",
+    title: "text-green-800",
+    msg: "text-green-700"
+  },
+  error: {
+    container: "bg-red-100 border-l-4 border-red-500 text-red-700",
+    title: "text-red-800",
+    msg: "text-red-700"
+  },
+  warning: {
+    container: "bg-orange-100 border-l-4 border-orange-500 text-orange-700",
+    title: "text-orange-800",
+    msg: "text-orange-700"
+  },
+  info: {
+    container: "bg-blue-100 border-l-4 border-blue-500 text-blue-700",
+    title: "text-blue-800",
+    msg: "text-blue-700"
+  }
+}, P = { class: "noti__container" }, N = /* @__PURE__ */ f({
   __name: "Notinoti",
   props: {
     notification: {
@@ -38,54 +38,49 @@ const P = {
     }
   },
   setup(t) {
-    const n = t, e = v(() => {
-      const i = n.notification.type || "info", s = {
-        success: o.success.container,
-        error: o.error.container,
-        warning: o.warning.container,
-        info: o.info.container
+    const r = t, n = b(() => {
+      const o = r.notification.type || "info", l = {
+        success: e.success.container,
+        error: e.error.container,
+        warning: e.warning.container,
+        info: e.info.container
       }, a = {
-        success: o.success.title,
-        error: o.error.title,
-        warning: o.warning.title,
-        info: o.info.title
-      }, b = {
-        success: o.success.msg,
-        error: o.error.msg,
-        warning: o.warning.msg,
-        info: o.info.msg
+        success: e.success.title,
+        error: e.error.title,
+        warning: e.warning.title,
+        info: e.info.title
+      }, p = {
+        success: e.success.msg,
+        error: e.error.msg,
+        warning: e.warning.msg,
+        info: e.info.msg
       };
       return {
-        container: s[i],
-        title: a[i],
-        msg: b[i]
+        container: l[o],
+        title: a[o],
+        msg: p[o]
       };
     });
-    return (i, s) => t.notification ? (d(), g("div", {
+    return (o, l) => t.notification ? (d(), g("div", {
       key: 0,
-      class: l(["noti", t.notification.position || "topRight"])
+      class: c(["noti", t.notification.position || "topRight"])
     }, [
-      c("div", C, [
-        c("div", {
-          class: l(["noti__content", `${t.classProp.container || e.value.container}`]),
+      s("div", P, [
+        s("div", {
+          class: c(["noti__content", `${t.classProp.container || n.value.container}`]),
           role: "alert"
         }, [
-          c("p", {
-            class: l(["noti__title", `${t.classProp.title || e.value.title}`])
-          }, u(n.notification.title), 3),
-          c("p", {
-            class: l(["noti__msg", `${t.classProp.msg || e.value.msg}`])
-          }, u(n.notification.msg), 3)
+          s("p", {
+            class: c(["noti__title", `${t.classProp.title || n.value.title}`])
+          }, u(r.notification.title), 3),
+          s("p", {
+            class: c(["noti__msg", `${t.classProp.msg || n.value.msg}`])
+          }, u(r.notification.msg), 3)
         ], 2)
       ])
-    ], 2)) : _("", !0);
+    ], 2)) : v("", !0);
   }
-}), p = (t, n) => {
-  const e = t.__vccOpts || t;
-  for (const [i, s] of n)
-    e[i] = s;
-  return e;
-}, D = /* @__PURE__ */ p(q, [["__scopeId", "data-v-0777df91"]]), M = { class: "provider__wrapper" }, O = /* @__PURE__ */ m({
+}), $ = { class: "data-provider__wrapper_style_wrapper" }, D = /* @__PURE__ */ f({
   __name: "NotiProvider",
   props: {
     containerPadding: {
@@ -96,43 +91,43 @@ const P = {
     }
   },
   setup(t) {
-    const { notifications: n } = j(), e = t;
-    return (i, s) => (d(!0), g(x, null, w(h(n).values(), (a) => (d(), g("div", {
-      class: "provider",
+    const { notifications: r } = I(), n = t;
+    return (o, l) => (d(!0), g(_, null, x(w(r).values(), (a) => (d(), g("div", {
+      class: "data-provider_style_provider_",
       key: a.id,
-      style: y({ padding: `${e.containerPadding}px` })
+      style: h({ padding: `${n.containerPadding}px` })
     }, [
-      c("div", M, [
-        N(D, { notification: a }, null, 8, ["notification"])
+      s("div", $, [
+        y(N, { notification: a }, null, 8, ["notification"])
       ])
     ], 4))), 128));
   }
-}), B = /* @__PURE__ */ p(O, [["__scopeId", "data-v-b97e8743"]]);
-class r {
+});
+class i {
   constructor() {
-    this.notifications = f(
+    this.notifications = m(
       /* @__PURE__ */ new Map()
     );
   }
   static getInstance() {
-    return r.instance || (r.instance = f(new r())), r.instance;
+    return i.instance || (i.instance = m(new i())), i.instance;
   }
 }
-const S = (t) => {
-  r.getInstance().notifications.delete(t);
-}, V = (t) => {
-  const n = r.getInstance();
-  let e = Math.random() + Date.now().toString();
-  for (; n.notifications.has(e); )
-    e = Math.random() + Date.now().toString();
-  t.id = e, n.notifications.set(e, t), console.log(n.notifications), setTimeout(() => {
-    S(e);
+const C = (t) => {
+  i.getInstance().notifications.delete(t);
+}, k = (t) => {
+  const r = i.getInstance();
+  let n = Math.random() + Date.now().toString();
+  for (; r.notifications.has(n); )
+    n = Math.random() + Date.now().toString();
+  t.id = n, r.notifications.set(n, t), setTimeout(() => {
+    C(n);
   }, t.timeout || 2e3);
-}, j = () => ({
-  notifications: r.getInstance().notifications,
-  addNotification: V
+}, I = () => ({
+  notifications: i.getInstance().notifications,
+  addNotification: k
 });
 export {
-  B as NotiProvider,
-  j as useNotification
+  D as NotiProvider,
+  I as useNotification
 };

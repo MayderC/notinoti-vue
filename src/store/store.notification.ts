@@ -41,10 +41,8 @@ const addNotification =(notification: NotinotiProps) =>{
     hash = Math.random() + Date.now().toString();
   }
 
-  
   notification.id = hash;
   instance.notifications.set(hash, notification);
-  console.log(instance.notifications);
 
   setTimeout(() => {
     removeNoti(hash);
@@ -59,6 +57,8 @@ interface useNotification {
 
 /*
   @returns {useNotification} - An object containing the notifications and the addNotification function
+  - notifications: A reactive map containing the notifications
+  - addNotification: A function that adds a notification to the map
 */
 
 export const useNotification = () : useNotification => {
