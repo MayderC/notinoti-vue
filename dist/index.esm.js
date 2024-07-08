@@ -1,7 +1,7 @@
 import { defineComponent as f, computed as b, openBlock as d, createElementBlock as g, normalizeClass as c, createElementVNode as s, toDisplayString as u, createCommentVNode as v, Fragment as _, renderList as x, unref as w, normalizeStyle as h, createVNode as y, reactive as m } from "vue";
 const e = {
   success: {
-    container: "bg-green-100 border-l-4 border-green-500 text-green-700",
+    container: "bg-green-200 border-l-4 border-green-500 text-green-700",
     title: "text-green-800",
     msg: "text-green-700"
   },

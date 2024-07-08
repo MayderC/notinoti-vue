@@ -1,6 +1,6 @@
 export const CLASS = {
   "success": {
-    "container": "bg-green-100 border-l-4 border-green-500 text-green-700",
+    "container": "bg-green-200 border-l-4 border-green-500 text-green-700",
     "title": "text-green-800",
     "msg": "text-green-700"
   },

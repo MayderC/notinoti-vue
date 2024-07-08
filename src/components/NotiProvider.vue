@@ -29,25 +29,3 @@ const props = defineProps(
 );
 
 </script>
-
-
-<style>
-
-.data-provider_style_provider_{
-  position: absolute;
-  padding: 100px;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index:-9999
-}
-
-.data-provider__wrapper_style_wrapper {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  z-index: -9999;
-}
-
-</style>
